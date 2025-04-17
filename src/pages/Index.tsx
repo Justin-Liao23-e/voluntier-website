@@ -1,8 +1,5 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -108,83 +105,55 @@ const Index = () => {
       <section id="hero" className="hero min-h-screen flex items-center relative overflow-hidden">
         <div className="background-blur absolute"></div>
         <div className="container mx-auto px-6 py-24 md:py-32 relative z-10">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="hero-content fade-in" style={{animationDelay: "0.2s"}}>
-              <h1 className="font-lexend text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Connect. Volunteer. <span className="text-accent">Impact.</span>
-              </h1>
-              <p className="text-lg md:text-xl mb-10 font-inter max-w-lg">
-                The smarter way to find, manage, and track volunteer opportunities in your community.
-              </p>
-              
-              {/* CTA Card */}
-              <Card id="cta-card" className="cta-card p-6 backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg max-w-md">
-                <div className="slots-badge">
-                  <div className="slots-progress" style={{width: `${(slots/300)*100}%`}}></div>
-                  <span className="font-mono text-sm">Only <span id="slots" className="font-bold">{slots}</span> spots left</span>
-                </div>
-                
-                <h3 className="font-lexend text-xl font-bold mt-4 mb-4">Join our Beta Program</h3>
-                
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <Input 
-                    placeholder="Your name" 
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    className="bg-white/50 dark:bg-slate-800/50"
-                  />
-                  <Input 
-                    type="email" 
-                    placeholder="Your email" 
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="bg-white/50 dark:bg-slate-800/50"
-                  />
-                  <Button type="submit" className="w-full">Secure Your Spot</Button>
-                </form>
-                
-                <p className="text-sm text-muted-foreground mt-4">
-                  We'll notify you when it's your turn to access the beta.
-                </p>
-                
-                <div className="mt-6 flex items-center justify-center">
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button variant="outline" className="watch-demo flex items-center gap-2">
-                        <span className="play-icon"></span> Watch Demo
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="demo-dialog">
-                      <DialogHeader>
-                        <DialogTitle>VolunTier in Action</DialogTitle>
-                      </DialogHeader>
-                      <div className="aspect-video overflow-hidden rounded-lg">
-                        <video 
-                          ref={videoRef}
-                          controls
-                          muted
-                          className="w-full h-full object-cover"
-                          src="https://static.videezy.com/system/resources/previews/000/044/479/original/portfolio.mp4"
-                        />
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </div>
-              </Card>
-            </div>
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-12">
+            <h1 className="font-lexend text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              Find volunteer opportunities that align with your skills and goals.
+            </h1>
+            <p className="text-lg md:text-xl mb-10 font-inter">
+              VolunTier allows you to earn badges, record past volunteers, and gain skills / experience, marking your impact to the community.
+            </p>
             
-            <div className="hero-device fade-in-right hidden md:block" style={{animationDelay: "0.4s"}}>
-              <div className="device-wrapper">
-                <div className="device-mockup">
-                  <img 
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                    alt="VolunTier app on laptop" 
-                    className="device-image rounded-lg shadow-2xl"
-                    loading="lazy"
-                  />
-                </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="outline" className="watch-demo flex items-center gap-2">
+                    <span className="play-icon"></span> Watch Demo
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="demo-dialog">
+                  <DialogHeader>
+                    <DialogTitle>VolunTier in Action</DialogTitle>
+                  </DialogHeader>
+                  <div className="aspect-video overflow-hidden rounded-lg">
+                    <video 
+                      ref={videoRef}
+                      controls
+                      muted
+                      className="w-full h-full object-cover"
+                      src="https://static.videezy.com/system/resources/previews/000/044/479/original/portfolio.mp4"
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
+              
+              <Button 
+                className="cta-button"
+                onClick={() => window.location.href = '/beta'}
+              >
+                Join Beta
+              </Button>
+            </div>
+          </div>
+          
+          <div className="hero-device fade-in-right hidden md:block" style={{animationDelay: "0.4s"}}>
+            <div className="device-wrapper">
+              <div className="device-mockup">
+                <img 
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="VolunTier app on laptop" 
+                  className="device-image rounded-lg shadow-2xl"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
