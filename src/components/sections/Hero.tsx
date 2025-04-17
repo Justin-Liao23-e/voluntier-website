@@ -12,19 +12,19 @@ const Hero = () => {
     <section id="hero" className="hero min-h-screen flex items-center relative overflow-hidden">
       <div className="background-blur absolute"></div>
       <div className="container mx-auto px-6 py-24 md:py-32 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-12">
-          <h1 className="font-lexend text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+          <h1 className="font-lexend text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
             Find volunteer opportunities that align with your skills and goals.
           </h1>
-          <p className="text-lg md:text-xl mb-10 font-inter">
+          <p className="text-lg md:text-xl mb-10 font-inter animate-fade-in" style={{animationDelay: "0.2s"}}>
             VolunTier allows you to earn badges, record past volunteers, and gain skills / experience, marking your impact to the community.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{animationDelay: "0.3s"}}>
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="watch-demo flex items-center gap-2">
-                  <span className="play-icon"></span> Watch Demo
+                <Button variant="outline" className="watch-demo">
+                  Watch Demo
                 </Button>
               </DialogTrigger>
               <DialogContent className="demo-dialog">
@@ -49,19 +49,6 @@ const Hero = () => {
             >
               Join Beta
             </Button>
-          </div>
-        </div>
-        
-        <div className="hero-device fade-in-right hidden md:block" style={{animationDelay: "0.4s"}}>
-          <div className="device-wrapper">
-            <div className="device-mockup">
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="VolunTier app on laptop" 
-                className="device-image rounded-lg shadow-2xl"
-                loading="lazy"
-              />
-            </div>
           </div>
         </div>
       </div>

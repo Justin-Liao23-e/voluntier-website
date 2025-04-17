@@ -2,10 +2,10 @@
 import { Search, Star, Calendar, Users, BarChart2, Award } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
-const FeatureCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
-  <Card className="feature-card p-6 hover-lift">
+const FeatureCard = ({ icon: Icon, title, description, type }: { icon: any, title: string, description: string, type: 'volunteer' | 'organizer' }) => (
+  <Card className={`feature-card p-6 hover-lift ${type === 'volunteer' ? 'volunteer-card' : 'organizer-card'}`}>
     <div className="feature-icon">
-      <span className="icon-circle">
+      <span className={`icon-circle ${type === 'volunteer' ? 'volunteer-icon' : 'organizer-icon'}`}>
         <Icon className="w-6 h-6" />
       </span>
     </div>
@@ -19,32 +19,38 @@ const Features = () => {
     {
       icon: Search,
       title: "Discover Opportunities",
-      description: "Find volunteer opportunities that match your skills, interests, and availability."
+      description: "Find volunteer opportunities that match your skills, interests, and availability.",
+      type: 'volunteer'
     },
     {
       icon: Star,
       title: "Track Your Impact",
-      description: "Monitor your volunteer hours, skills developed, and the difference you're making."
+      description: "Monitor your volunteer hours, skills developed, and the difference you're making.",
+      type: 'volunteer'
     },
     {
       icon: Calendar,
       title: "Smart Scheduling",
-      description: "Flexible scheduling tools that work with your calendar and availability preferences."
+      description: "Flexible scheduling tools that work with your calendar and availability preferences.",
+      type: 'volunteer'
     },
     {
       icon: Users,
       title: "Volunteer Management",
-      description: "Powerful tools for organizers to recruit, schedule, and communicate with volunteers."
+      description: "Powerful tools for organizers to recruit, schedule, and communicate with volunteers.",
+      type: 'organizer'
     },
     {
       icon: BarChart2,
       title: "Event Analytics",
-      description: "Detailed analytics and reports to measure impact and improve future events."
+      description: "Detailed analytics and reports to measure impact and improve future events.",
+      type: 'organizer'
     },
     {
       icon: Award,
       title: "Certification",
-      description: "Verified volunteer hours and achievements that can be shared on professional profiles."
+      description: "Verified volunteer hours and achievements that can be shared on professional profiles.",
+      type: 'organizer'
     }
   ];
 
@@ -53,7 +59,7 @@ const Features = () => {
       <div className="container mx-auto px-6">
         <div className="section-header text-center mb-16">
           <h2 className="font-lexend text-3xl md:text-4xl font-bold mb-4 relative">
-            <span className="text-accent">For Volunteers</span> / For Organizers
+            <span className="text-accent">For Volunteers</span> / <span className="text-primary/80">For Organizers</span>
           </h2>
           <p className="text-lg max-w-2xl mx-auto">
             A platform to connect volunteers with meaningful opportunities and help organizers manage their events efficiently.

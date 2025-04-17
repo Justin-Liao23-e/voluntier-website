@@ -84,13 +84,14 @@
   }
 }
 
+/* Base Styles */
 .voluntier-app {
   @apply min-h-screen flex flex-col;
 }
 
 /* Navbar Styles */
 .navbar {
-  @apply fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-md z-50 border-b border-border/50 transition-all duration-300;
+  @apply fixed top-0 left-0 right-0 bg-background/90 backdrop-blur-xl z-50 border-b border-border/50 transition-all duration-300;
 }
 
 .navbar-hidden {
@@ -150,30 +151,38 @@
   @apply w-[80%] h-[80%] bg-accent/20 rounded-full blur-[100px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30;
 }
 
-/* CTA Card */
-.cta-card {
-  @apply transition-all duration-300 hover:shadow-lg;
-}
-
-.slots-badge {
-  @apply relative bg-secondary rounded-full h-6 flex items-center px-3 overflow-hidden max-w-[200px];
-}
-
-.slots-progress {
-  @apply absolute left-0 top-0 bottom-0 bg-accent/40 transition-all duration-300;
-}
-
 .watch-demo {
   @apply relative transition-all duration-300 hover:text-accent;
 }
 
-.play-icon {
-  @apply inline-block w-4 h-4 rounded-full bg-accent relative before:content-[''] before:absolute before:left-[40%] before:top-1/2 before:-translate-y-1/2 before:w-0 before:h-0 before:border-t-[5px] before:border-t-transparent before:border-b-[5px] before:border-b-transparent before:border-l-[8px] before:border-l-white;
+/* Beta Signup */
+.slots-badge {
+  @apply relative bg-secondary/80 rounded-full h-8 flex items-center justify-center px-3 overflow-hidden;
+}
+
+.slots-progress {
+  @apply absolute left-0 top-0 bottom-0 bg-accent/30 transition-all duration-300;
 }
 
 /* Features Section */
 .feature-card {
-  @apply backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 transition-all duration-300 border border-border/50;
+  @apply backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 transition-all duration-300 border border-border/50 relative overflow-hidden;
+}
+
+.volunteer-card {
+  @apply before:content-[''] before:absolute before:top-0 before:left-0 before:w-1 before:h-full before:bg-accent;
+}
+
+.organizer-card {
+  @apply before:content-[''] before:absolute before:top-0 before:left-0 before:w-1 before:h-full before:bg-primary/40;
+}
+
+.volunteer-icon {
+  @apply flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 border border-accent/30 text-accent;
+}
+
+.organizer-icon {
+  @apply flex items-center justify-center w-12 h-12 rounded-full bg-primary/5 border border-primary/20 text-primary/80;
 }
 
 .hover-lift {
@@ -185,27 +194,20 @@
 }
 
 .icon-circle {
-  @apply flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 border border-accent/30 text-accent;
+  @apply flex items-center justify-center w-12 h-12 rounded-full;
 }
 
 /* Contact Section */
-.contact-icon {
-  @apply text-accent;
+.social-icon-large {
+  @apply flex items-center justify-center w-10 h-10 rounded-full border border-border bg-background/50 text-foreground hover:text-accent hover:border-accent hover:shadow-[0_0_8px_rgba(255,103,33,0.4)] transition-all duration-300;
 }
 
-.social-icon {
-  @apply text-foreground hover:text-accent transition-colors duration-200;
+/* Founder Cards */
+.founder-card {
+  @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl transition-all duration-300;
 }
 
 /* Animations */
-.fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-.fade-in-right {
-  animation: fadeInRight 0.8s ease-out forwards;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -217,15 +219,23 @@
   }
 }
 
-@keyframes fadeInRight {
+@keyframes scaleIn {
   from {
     opacity: 0;
-    transform: translateX(50px);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1);
   }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
 }
 
 /* Success Toast */
@@ -235,7 +245,7 @@
 
 /* Media Queries */
 @media (prefers-reduced-motion: reduce) {
-  .fade-in, .fade-in-right {
+  .animate-fade-in, .animate-scale-in {
     animation: none;
     opacity: 1;
     transform: none;
