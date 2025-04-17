@@ -15,7 +15,13 @@ const FeatureCard = ({ icon: Icon, title, description, type }: { icon: any, titl
 );
 
 const Features = () => {
-  const features = [
+  // Specify the correct type for the features array
+  const features: {
+    icon: any;
+    title: string;
+    description: string;
+    type: 'volunteer' | 'organizer';
+  }[] = [
     {
       icon: Search,
       title: "Discover Opportunities",
