@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,15 +27,20 @@ const BetaSignup = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <div className="py-6 px-6 flex items-center">
-        <Link to="/" className="flex items-center text-foreground hover:text-accent transition-colors">
-          <ArrowLeft className="mr-2 h-5 w-5" />
-          <span>Back to Home</span>
-        </Link>
-      </div>
+    <div className="min-h-screen bg-background relative">
+      <Link 
+        to="/"
+        className="fixed top-8 left-8 z-50 flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
+      >
+        <ArrowLeft className="w-5 h-5" />
+        Back
+      </Link>
       
-      <div className="flex-1 flex items-center justify-center p-4">
+      <div className="flex flex-col items-center justify-center min-h-screen p-6">
+        <Link to="/" className="font-lexend font-bold text-3xl mb-12">
+          Volun<span className="text-accent">Tier</span>
+        </Link>
+        
         <Card className="w-full max-w-md p-8 backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg animate-fade-in">
           <div className="flex justify-center mb-6">
             <div className="font-lexend font-bold text-3xl">Volun<span className="text-accent">Tier</span></div>

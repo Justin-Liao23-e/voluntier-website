@@ -1,6 +1,8 @@
 
 import { Search, Star, Calendar, Users, BarChart2, Award } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const FeatureCard = ({ icon: Icon, title, description, type }: { icon: any, title: string, description: string, type: 'volunteer' | 'organizer' }) => (
   <Card className={`feature-card p-6 hover-lift ${type === 'volunteer' ? 'volunteer-card' : 'organizer-card'}`}>
@@ -10,12 +12,11 @@ const FeatureCard = ({ icon: Icon, title, description, type }: { icon: any, titl
       </span>
     </div>
     <h3 className="font-lexend text-xl font-bold mt-4 mb-2">{title}</h3>
-    <p>{description}</p>
+    <p className="text-muted-foreground">{description}</p>
   </Card>
 );
 
 const Features = () => {
-  // Specify the correct type for the features array
   const features: {
     icon: any;
     title: string;
@@ -64,10 +65,10 @@ const Features = () => {
     <section id="features" className="features py-24 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-6">
         <div className="section-header text-center mb-16">
-          <h2 className="font-lexend text-3xl md:text-4xl font-bold mb-4 relative">
+          <h2 className="font-lexend text-3xl md:text-4xl font-bold mb-4">
             <span className="text-accent">For Volunteers</span> / <span className="text-primary/80">For Organizers</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto text-muted-foreground">
             A platform to connect volunteers with meaningful opportunities and help organizers manage their events efficiently.
           </p>
         </div>
@@ -76,6 +77,14 @@ const Features = () => {
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} />
           ))}
+        </div>
+
+        <div className="flex justify-center mt-12">
+          <Link to="/features">
+            <Button variant="outline" className="rounded-full px-8 hover:bg-accent hover:text-white">
+              See More Features
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
