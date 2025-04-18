@@ -5,7 +5,7 @@ import FeaturesPage from './pages/FeaturesPage';
 import ContactPage from './pages/ContactPage';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
-import ScrollToTop from '@/components/ScrollToTop';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
