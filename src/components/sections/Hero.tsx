@@ -3,7 +3,6 @@ import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useNavigate } from "react-router-dom";
-import { Apple } from "lucide-react";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -24,11 +23,11 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{animationDelay: "0.3s"}}>
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" className="watch-demo px-6 py-3 rounded-full">
+                <Button variant="outline" className="watch-demo">
                   Watch Demo
                 </Button>
               </DialogTrigger>
-              <DialogContent className="demo-dialog max-w-4xl w-full">
+              <DialogContent className="demo-dialog">
                 <DialogHeader>
                   <DialogTitle>VolunTier in Action</DialogTitle>
                 </DialogHeader>
@@ -45,7 +44,7 @@ const Hero = () => {
             </Dialog>
             
             <Button 
-              className="cta-button px-6 py-3 rounded-full"
+              className="cta-button"
               onClick={() => navigate('/beta')}
             >
               Join Beta
