@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
@@ -135,7 +134,7 @@
 }
 
 .mobile-menu {
-  @apply fixed top-20 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/50 transform translate-y-[-100%] transition-transform duration-300 z-40;
+  @apply fixed top-20 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/50 transform -translate-y-full transition-transform duration-300 z-40;
 }
 
 .mobile-menu.show {

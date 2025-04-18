@@ -1,7 +1,6 @@
-
 import Navbar from "@/components/sections/Navbar";
 import { Card } from "@/components/ui/card";
-import { Linkedin, Globe } from "lucide-react";
+import { Linkedin, Globe, Instagram, Twitter, Mail } from "lucide-react";
 
 const About = () => {
   const founders = [
@@ -23,7 +22,8 @@ const About = () => {
     <div className="voluntier-app">
       <Navbar />
       
-      <section className="py-32 mt-20">
+      <section className="py-32 mt-20 relative overflow-hidden">
+        <div className="background-blur absolute opacity-20 -top-10 -left-10"></div>
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-12 animate-fade-in">
             <h1 className="font-lexend text-4xl md:text-5xl font-bold mb-8">Founder's Letter</h1>
@@ -64,46 +64,47 @@ const About = () => {
               <p className="text-xl font-lexend font-bold text-accent mt-2">VolunTier Founders</p>
             </div>
           </div>
-          
-          <div className="animate-fade-in" style={{animationDelay: "0.3s"}}>
-            <h2 className="font-lexend text-2xl md:text-3xl font-bold mb-10 text-center">Our Team</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {founders.map((founder, index) => (
-                <Card key={index} className="founder-card p-6 flex flex-col items-center text-center hover-lift">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-accent/20">
-                    <img
-                      src={founder.image}
-                      alt={founder.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  
-                  <h3 className="font-lexend text-xl font-bold mb-3">{founder.name}</h3>
-                  
-                  <div className="flex space-x-4 mt-4">
-                    <a 
-                      href={founder.linkedin} 
-                      className="social-icon-large"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${founder.name}'s LinkedIn`}
-                    >
-                      <Linkedin className="w-5 h-5" />
-                    </a>
-                    <a 
-                      href={founder.website} 
-                      className="social-icon-large"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${founder.name}'s Website`}
-                    >
-                      <Globe className="w-5 h-5" />
-                    </a>
-                  </div>
-                </Card>
-              ))}
-            </div>
+        </div>
+      </section>
+      
+      <section id="team" className="py-24 md:py-32 bg-secondary/30">
+        <div className="container mx-auto px-6">
+          <h2 className="font-lexend text-2xl md:text-3xl font-bold mb-10 text-center">Our Team</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {founders.map((founder, index) => (
+              <Card key={index} className="founder-card p-6 flex flex-col items-center text-center hover-lift">
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-accent/20">
+                  <img
+                    src={founder.image}
+                    alt={founder.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <h3 className="font-lexend text-xl font-bold mb-3">{founder.name}</h3>
+                
+                <div className="flex space-x-4 mt-4">
+                  <a 
+                    href={founder.linkedin} 
+                    className="social-icon-large"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${founder.name}'s LinkedIn`}
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a 
+                    href={founder.website} 
+                    className="social-icon-large"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${founder.name}'s Website`}
+                  >
+                    <Globe className="w-5 h-5" />
+                  </a>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -112,6 +113,12 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="text-center text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} VolunTier. All rights reserved.
+          </div>
+          <div className="flex justify-center space-x-6 mt-4 text-2xl text-foreground hover:text-accent">
+            <a href="#" aria-label="Instagram"><Instagram /></a>
+            <a href="#" aria-label="LinkedIn"><Linkedin /></a>
+            <a href="#" aria-label="Twitter"><Twitter /></a>
+            <a href="mailto:hello@voluntier.com" aria-label="Email"><Mail /></a>
           </div>
         </div>
       </footer>

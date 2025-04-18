@@ -1,4 +1,3 @@
-
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -27,7 +26,7 @@ const Hero = () => {
                   Watch Demo
                 </Button>
               </DialogTrigger>
-              <DialogContent className="demo-dialog">
+              <DialogContent className="demo-dialog w-[95vw] max-w-4xl">
                 <DialogHeader>
                   <DialogTitle>VolunTier in Action</DialogTitle>
                 </DialogHeader>

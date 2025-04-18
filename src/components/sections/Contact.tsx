@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,16 +29,14 @@ const Contact = () => {
     <section id="contact" className="contact py-24 md:py-32">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center mb-12">
-          <h2 className="font-lexend text-3xl md:text-4xl font-bold mb-6">
-            Get in <span className="text-accent">Touch</span>
-          </h2>
-          <p className="text-lg max-w-2xl mx-auto">
+          <h2 className="font-lexend text-3xl md:text-4xl font-bold mb-6">Get in <span className="text-accent">Touch</span></h2>
+          <p className="text-lg max-w-2xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
             Have questions about VolunTier? Want to partner with us? We'd love to hear from you.
           </p>
         </div>
         
         <div className="max-w-md mx-auto">
-          <Card className="contact-form-card p-6 backdrop-blur-xl bg-white/80 dark:bg-slate-900/80 border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg hover-lift">
+          <Card className="contact-form-card p-6 bg-white/80 dark:bg-slate-900/80 border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input 
                 placeholder="Your name" 
