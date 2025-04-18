@@ -17,20 +17,6 @@ const DownloadSection = () => (
           Get the App
         </button>
       </a>
-      <div className="flex space-x-6 mt-8 text-2xl text-foreground hover:text-accent">
-        <a href="#" aria-label="Instagram">
-          <Instagram />
-        </a>
-        <a href="#" aria-label="LinkedIn">
-          <Linkedin />
-        </a>
-        <a href="#" aria-label="Twitter">
-          <Twitter />
-        </a>
-        <a href="mailto:hello@voluntier.com" aria-label="Email">
-          <Mail />
-        </a>
-      </div>
     </div>
   </section>
 );

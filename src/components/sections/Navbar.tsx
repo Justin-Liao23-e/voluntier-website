@@ -8,27 +8,29 @@ const Navbar = () => {
 
   return (
     <header className="navbar fixed top-0 left-0 right-0 z-50">
-      <div className="container mx-auto px-6 flex justify-between items-center h-20">
+      <div className="w-full px-6 flex items-center justify-between h-20">
         <div className="logo">
           <Link to="/" className="font-lexend font-bold text-2xl">Volun<span className="text-accent">Tier</span></Link>
         </div>
         
-        <nav className={`nav-links ${isMenuOpen ? 'nav-open' : ''}`}>
-          <ul className="hidden md:flex space-x-8">
-            <li><Link to="/" className="nav-link">Home</Link></li>
-            <li><Link to="/about" className="nav-link">About</Link></li>
-            <li><Link to="/features" className="nav-link">Features</Link></li>
-            <li><Link to="/contact" className="nav-link">Contact</Link></li>
-          </ul>
-        </nav>
-        
-        <Button 
-          onClick={() => navigate('/beta')}
-          className="cta-button hidden md:flex"
-        >
-          Join Beta
-        </Button>
-        
+        <div className="hidden md:flex items-center space-x-12">
+          <nav className={`nav-links ${isMenuOpen ? 'nav-open' : ''}`}>
+            <ul className="flex space-x-8">
+              <li><Link to="/" className="nav-link">Home</Link></li>
+              <li><Link to="/about" className="nav-link">About</Link></li>
+              <li><Link to="/features" className="nav-link">Features</Link></li>
+              <li><Link to="/contact" className="nav-link">Contact</Link></li>
+            </ul>
+          </nav>
+          
+          <Button 
+            onClick={() => navigate('/beta')}
+            className="cta-button"
+          >
+            Join Beta
+          </Button>
+        </div>
+
         <button 
           className="hamburger md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}

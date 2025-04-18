@@ -75,8 +75,8 @@ const FeaturesDetailed = () => {
     <section className="py-24 md:py-32">
       <div className="container mx-auto px-6">
         <div className="flex justify-center mb-8">
-          <button onClick={() => setActive('volunteer')} className={`${active === 'volunteer' ? 'bg-accent text-white' : 'bg-gray-200'} px-4 py-2 rounded-l-full`}>For Volunteers</button>
-          <button onClick={() => setActive('organizer')} className={`${active === 'organizer' ? 'bg-accent text-white' : 'bg-gray-200'} px-4 py-2 rounded-r-full`}>For Organizers</button>
+          <button onClick={() => setActive('volunteer')} className={`${active === 'volunteer' ? 'bg-accent text-white' : 'bg-gray-200'} px-4 py-2 rounded-l-full`}>Volunteers</button>
+          <button onClick={() => setActive('organizer')} className={`${active === 'organizer' ? 'bg-accent text-white' : 'bg-gray-200'} px-4 py-2 rounded-r-full`}>Organizers</button>
         </div>
         <div className="text-center mb-12">
           <p className="text-lg max-w-2xl mx-auto">{active === 'volunteer' ? 'Placeholder text for Volunteers section.' : 'Placeholder text for Organizers section.'}</p>

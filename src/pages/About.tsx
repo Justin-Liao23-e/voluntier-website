@@ -6,15 +6,17 @@ const About = () => {
   const founders = [
     {
       name: "Justin Liao",
-      image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=400&h=400&auto=format&fit=crop",
-      linkedin: "#",
-      website: "#",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQEcBFHsy-TJhw/profile-displayphoto-shrink_800_800/B56ZULoDQyGoAg-/0/1739656805713?e=1750291200&v=beta&t=0kbSkqylEw9lm4b8CT-ZgbQmQaeG8NwzeepXmoNgDO0",
+      role: "Founder / CEO",
+      linkedin: "https://www.linkedin.com/in/justin-liao23/",
+      website: "https://justin-liao23-e.github.io/portfolio/",
     },
     {
       name: "Thomas Suen",
-      image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=400&h=400&auto=format&fit=crop",
-      linkedin: "#",
-      website: "#",
+      image: "Thomas.jpg",
+      role: "Founder / CTO",
+      linkedin: "https://www.linkedin.com/in/thomas-suen-84776a262/",
+      website: "https://owenisas.com",
     }
   ];
 
@@ -83,6 +85,8 @@ const About = () => {
                 
                 <h3 className="font-lexend text-xl font-bold mb-3">{founder.name}</h3>
                 
+                <p className="text-lg text-muted-foreground mb-4">{founder.role}</p>
+
                 <div className="flex space-x-4 mt-4">
                   <a 
                     href={founder.linkedin} 
