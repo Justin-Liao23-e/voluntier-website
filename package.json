@@ -2,7 +2,7 @@
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://justin-liao.github.io/voluntier-website",
+  "homepage": "https://justin-liao23-e.github.io/voluntier-website",
   "type": "module",
   "scripts": {
     "dev": "vite",
